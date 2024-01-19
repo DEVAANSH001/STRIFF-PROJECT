@@ -129,5 +129,5 @@ document.getElementById("search-button").addEventListener("click", () => {
 
 //Initially display all products
 window.onload = () => {
-  filterProduct("all");
+  filterProduct("All");
 };
