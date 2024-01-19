@@ -3,49 +3,49 @@ let products = {
     {
       productName: "Banking Management",
       category: "Python",
-      price: "30",
+     // price: "30",
       image: "bank.jpg",
     },
     {
       productName: "Sudoko",
       category: "Python",
-      price: "49",
+      //price: "49",
       image: "sudoko.jpg",
     },
     {
       productName: "Playing Cards",
       category: "Java",
-      price: "99",
+      //price: "99",
       image: "playing-cards.jpg",
     },
     {
       productName: "A",
       category: "A",
-      price: "A",
+      //price: "A",
       image: "playing-cards.jpg",
     },
     {
       productName: "B",
       category: "B",
-      price: "129",
+      //price: "129",
       image: "playing-cards.jpg",
     },
     {
       productName: "C",
       category: "C",
-      price: "89",
+      //price: "89",
       image: "playing-cards.jpg",
     },
     {
       productName: "Playing Cards",
       category: "C++",
-      price: "189",
+      //price: "189",
       image: "playing-cards.jpg",
     },
     {
       productName: "Playing Cards",
       category: "C++",
-      price: "49",
+      //price: "49",
       image: "playing-cards.jpg",
     },
   ],
@@ -66,9 +66,9 @@ for (let i of products.data) {                        //Create Card
   name.classList.add("product-name");
   name.innerText = i.productName.toUpperCase();
   container.appendChild(name);                       //price
-  let price = document.createElement("h6");
+  /*let price = document.createElement("h6");
   price.innerText = "$" + i.price;
-  container.appendChild(price);
+  container.appendChild(price);*/
 
   card.appendChild(container);
   document.getElementById("products").appendChild(card);
