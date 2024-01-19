@@ -51,28 +51,21 @@ let products = {
   ],
 };
 
-for (let i of products.data) {
-  //Create Card
-  let card = document.createElement("div");
-  //Card should have category and should stay hidden initially
-  card.classList.add("card", i.category, "hide");
-  //image div
+for (let i of products.data) {                        //Create Card
+  let card = document.createElement("div");          //Card should have category and should stay hidden initially
+  card.classList.add("card", i.category, "hide");   //image div
   let imgContainer = document.createElement("div");
-  imgContainer.classList.add("image-container");
-  //img tag
+  imgContainer.classList.add("image-container");    //img tag
   let image = document.createElement("img");
   image.setAttribute("src", i.image);
   imgContainer.appendChild(image);
-  card.appendChild(imgContainer);
-  //container
+  card.appendChild(imgContainer);                    //container
   let container = document.createElement("div");
-  container.classList.add("container");
-  //product name
+  container.classList.add("container");               //product name
   let name = document.createElement("h5");
   name.classList.add("product-name");
   name.innerText = i.productName.toUpperCase();
-  container.appendChild(name);
-  //price
+  container.appendChild(name);                       //price
   let price = document.createElement("h6");
   price.innerText = "$" + i.price;
   container.appendChild(price);
@@ -135,6 +128,6 @@ document.getElementById("search-button").addEventListener("click", () => {
 });
 
 //Initially display all products
-window.onload = () => {
+  window.onload = () => {
   filterProduct("all");
 };
