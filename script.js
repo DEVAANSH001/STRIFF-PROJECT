@@ -19,20 +19,20 @@ let products = {
       image: "playing-cards.jpg",
     },
     {
-      productName: "Playing Cards",
-      category: "Java",
-      price: "29",
+      productName: "A",
+      category: "A",
+      price: "A",
       image: "playing-cards.jpg",
     },
     {
-      productName: "Playing Cards",
-      category: "Html & Css",
+      productName: "B",
+      category: "B",
       price: "129",
       image: "playing-cards.jpg",
     },
     {
-      productName: "Playing Cards",
-      category: "Html & Css",
+      productName: "C",
+      category: "C",
       price: "89",
       image: "playing-cards.jpg",
     },
@@ -99,7 +99,7 @@ function filterProduct(value) {
   //loop through all cards
   elements.forEach((element) => {
     //display all cards on 'all' button click
-    if (value == "all") {
+    if (value == "All") {
       element.classList.remove("hide");
     } else {
       //Check if element contains category class
@@ -133,8 +133,3 @@ document.getElementById("search-button").addEventListener("click", () => {
     }
   });
 });
-
-//Initially display all products
-window.onload = () => {
-  filterProduct("all");
-};

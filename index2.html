@@ -24,7 +24,7 @@
 
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body onload="filterProduct('All')">
     <div id="sticky-wrapper" class="sticky-wrapper" style="height: 76px;"><nav class="navbar navbar-expand-lg">
       <div class="container">
           <a class="navbar-brand" href="index.html">
@@ -95,19 +95,11 @@
                       </form>
                   </div>
                   <div id="buttons">
-                    <button class="button-value" onclick="filterProduct('all')">All</button>
-                    <button class="button-value" onclick="filterProduct('Python')">
-                      Python
-                    </button>
-                    <button class="button-value" onclick="filterProduct('Java')">
-                      Java
-                    </button>
-                    <button class="button-value" onclick="filterProduct('Html & Css')">
-                      Html & Css
-                    </button>
-                    <button class="button-value" onclick="filterProduct('C++')">
-                      C++
-                    </button>
+                    <button class="button-value" onclick="filterProduct('All')">All</button>
+                    <button class="button-value" onclick="filterProduct('Python')">Python</button>
+                    <button class="button-value" onclick="filterProduct('Java')">Java</button>
+                    <button class="button-value" onclick="filterProduct('Html & Css')">Html & Css</button>
+                    <button class="button-value" onclick="filterProduct('C++')">C++</button>
                   </div>
               </div>
           </div>
