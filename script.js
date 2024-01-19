@@ -5,12 +5,14 @@ let products = {
       category: "Python",
      // price: "30",
       image: "bank.jpg",
+      htmlFile: "topics-detail.html",
     },
     {
       productName: "Sudoko",
       category: "Python",
       //price: "49",
       image: "sudoko.jpg",
+      htmlFile: "topics-detail copy.html",
     },
     {
       productName: "Playing Cards",
@@ -65,7 +67,12 @@ for (let i of products.data) {                        //Create Card
   let name = document.createElement("h5");
   name.classList.add("product-name");
   name.innerText = i.productName.toUpperCase();
-  container.appendChild(name);                       //price
+  container.appendChild(name);  
+  // Added an eventListener
+  card.addEventListener("click", () => {
+    // Redirect to the specified HTML file
+    window.location.href = i.htmlFile; 
+                      });                    //price
   /*let price = document.createElement("h6");
   price.innerText = "$" + i.price;
   container.appendChild(price);*/
