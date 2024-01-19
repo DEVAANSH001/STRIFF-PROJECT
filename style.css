@@ -47,6 +47,11 @@ img {
 footer{
   background-color: white;
 }
+.hero-section{
+  background-image: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 #search-button{
   border-bottom-left-radius: 0%;
   border-top-left-radius: 0%;
