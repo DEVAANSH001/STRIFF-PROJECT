@@ -359,7 +359,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                                                     </div>
                                                 </div>
 
-                                                <img src="images/topics/undraw_Graduation_re_gthn.png" class="custom-block-image img-fluid" alt="">
+                                                <img src="library.jpg" class="custom-block-image img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -376,7 +376,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                                                     </div>
                                                 </div>
 
-                                                <img src="images/topics/undraw_Educator_re_ju47.png" class="custom-block-image img-fluid" alt="">
+                                                <img src="rental-car-min.png" class="custom-block-image img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
