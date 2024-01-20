@@ -133,6 +133,17 @@ strong {
   font-weight: var(--font-weight-bold);
 }
 
+.contributor-name{
+  font-size:17pt;
+}
+
+.social-media{
+  width: 10vh;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
 
 /*---------------------------------------
   SECTION               
