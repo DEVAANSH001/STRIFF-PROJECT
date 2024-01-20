@@ -6,7 +6,7 @@ let products = {
       keywords: ["system", "users", "transactions", "create", "allows", "check", "deposits", "withdrawals", "application", "simple", "python", "perform", "use", "suitable", "intended", "history", "balances", "view", "purposes", "educational", "project", "accounts", "transaction", "applications", "banking"],
      // price: "30",
       image: "bank.jpg",
-      htmlFile: "topics-detail.html",
+      htmlFile: "banking_management_system.html",
     },
     {
       productName: "Sudoko",
@@ -14,7 +14,7 @@ let products = {
       keywords: ["row", "9", "without", "1", "sudoku", "regions", "known", "combinatorial", "subgrids", "nine", "9x9", "objective", "also", "3x3", "contain", "puzzle", "blocks", "column", "fill", "digits", "grid", "repetition"],
       //price: "49",
       image: "sudoko.jpg",
-      htmlFile: "topics-detail copy.html",
+      htmlFile: "sudoku_solver.html",
     },
     {
       productName: "Playing Cards",
@@ -22,6 +22,7 @@ let products = {
       keywords: ["simple", "compete", "shuffled", "players", "higher", "player", "wins", "drawing", "war", "cards", "deck", "card", "round", "game", "two", "known"],
       //price: "99",
       image: "playing-cards.jpg",
+      htmlFile: "card_game.html",
     },
     {
       productName: "Minesweeper",
@@ -29,6 +30,7 @@ let products = {
       keywords: ["classic", "minesweeper", "created", "using"],
       //price: "A",
       image: "playing-cards.jpg",
+      htmlFile: "minesweeper.html",
     },
     {
       productName: "Calculator",
@@ -36,6 +38,7 @@ let products = {
       keywords: ["java", "using", "creating", "basic", "calculator"],
       //price: "129",
       image: "playing-cards.jpg",
+      htmlFile: "calculator.html",
     },
     {
       productName: "Snake game",
@@ -43,6 +46,7 @@ let products = {
       keywords: ["fruit", "increase", "size", "randomly", "earned", "created", "classic", "board", "snake", "java", "points", "consuming", "time", "nostalgic", "game", "every", "fruits", "using", "consumed", "spawn"],
       //price: "89",
       image: "playing-cards.jpg",
+      htmlFile: "snake_game.html",
     },
     {
       productName: "Car rental system",
@@ -50,6 +54,7 @@ let products = {
       keywords: ["creating", "rental", "system", "using", "car", "easy", "use"],
       //price: "189",
       image: "playing-cards.jpg",
+      htmlFile: "car_rental_system.html",
     },
     {
       productName: "Library management system",
@@ -57,6 +62,7 @@ let products = {
       keywords: ['using', 'management', 'creating', 'system', 'library'],
       //price: "49",
       image: "playing-cards.jpg",
+      htmlFile: "library_management_system.html",
     },
   ],
 };
