@@ -29,7 +29,7 @@ let products = {
       category: "Java",
       keywords: ["classic", "minesweeper", "created", "using"],
       //price: "A",
-      image: "playing-cards.jpg",
+      image: "maxresdefault.jpg",
       htmlFile: "minesweeper.html",
     },
     {
@@ -37,7 +37,7 @@ let products = {
       category: "Java",
       keywords: ["java", "using", "creating", "basic", "calculator"],
       //price: "129",
-      image: "playing-cards.jpg",
+      image: "calculator.png",
       htmlFile: "calculator.html",
     },
     {
@@ -45,7 +45,7 @@ let products = {
       category: "Java",
       keywords: ["fruit", "increase", "size", "randomly", "earned", "created", "classic", "board", "snake", "java", "points", "consuming", "time", "nostalgic", "game", "every", "fruits", "using", "consumed", "spawn"],
       //price: "89",
-      image: "playing-cards.jpg",
+      image: "Snake_OG-logo (1).jpg",
       htmlFile: "snake_game.html",
     },
     {
@@ -53,7 +53,7 @@ let products = {
       category: "C++",
       keywords: ["creating", "rental", "system", "using", "car", "easy", "use"],
       //price: "189",
-      image: "playing-cards.jpg",
+      image: "rental-car-min.png",
       htmlFile: "car_rental_system.html",
     },
     {
@@ -61,7 +61,7 @@ let products = {
       category: "C++",
       keywords: ['using', 'management', 'creating', 'system', 'library'],
       //price: "49",
-      image: "playing-cards.jpg",
+      image: "library.jpg",
       htmlFile: "library_management_system.html",
     },
   ],
