@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
+    header("location: login.php");
+    exit;
+}
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -8,15 +19,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Topic Listing Bootstrap 5 Template</title>
+    <title>Welcome - <?php echo $_SESSION['username']?></title>
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -26,18 +36,27 @@
 </head>
 
 <body id="top">
+    <?php require (__DIR__ . '/login/partials/_nav.php') ?>
+
+    <div class="container my-3">
+        <div class="alert alert-success" role="alert" style="margin-top: 89px;">
+            <h4 class="alert-heading">Welcome - <?php echo $_SESSION['username'] ?></h4>
+            <p>Hey how are you doing? Welcome to STRIFF. You are logged in as <?php echo $_SESSION['username'] ?>. Let's help you find the project you need.</p>
+            <hr>
+            <p class="mb-0">Whenever you need to, be sure to logout <a href="/STRIFF-PROJECT/login/logout.php"> using this link.</a></p>
+        </div>
+    </div>
 
     <main>
 
-        <nav class="navbar navbar-expand-lg">
+        <!-- <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
                     <i class="bi-back"></i>
                     <span>STRIFF</span>
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -61,7 +80,7 @@
 
                 </div>
             </div>
-        </nav>
+        </nav> -->
 
 
         <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
@@ -71,10 +90,9 @@
                     <div class="col-lg-8 col-12 mx-auto">
                         <h1 class="text-white text-center">Discover. Learn. Revise</h1>
 
-                        <h6 class="text-center">Platform to Explore Projects </h6>
+                        <h6 class="text-center">platform to explore projects </h6>
 
-                        <form method="get" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" role="search"
-                            action="index2.html">
+                        <form method="get" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" role="search" action="index2.html">
                             <div class="input-group input-group-lg">
                                 <a href="index2.html">
                                     <button type="button" class="form-control">Explore</button>
@@ -104,8 +122,7 @@
                                     </div>
                                 </div>
 
-                                <img src="images/topics/undraw_Remote_design_team_re_urdx.png"
-                                    class="custom-block-image img-fluid" alt="">
+                                <img src="images/topics/undraw_Remote_design_team_re_urdx.png" class="custom-block-image img-fluid" alt="">
                             </a>
                         </div>
                     </div>
@@ -117,11 +134,13 @@
 
                                 <div class="custom-block-overlay-text d-flex">
                                     <div>
-                                        <h5 class="text-white mb-2">PHP Projects</h5>
+                                        <h5 class="text-white mb-2">Finance</h5>
 
-                                        <p class="text-white"></p>
+                                        <p class="text-white">Topic Listing Template includes homepage, listing page,
+                                            detail page, and contact page. You can feel free to edit and adapt for your
+                                            CMS requirements.</p>
 
-                                        <a href="" class="btn custom-btn mt-2 mt-lg-3">Learn More</a>
+                                        <a href="topics-detail.html" class="btn custom-btn mt-2 mt-lg-3">Learn More</a>
                                     </div>
                                 </div>
 
@@ -150,33 +169,23 @@
                 <div class="row">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="design-tab" data-bs-toggle="tab"
-                                data-bs-target="#design-tab-pane" type="button" role="tab"
-                                aria-controls="design-tab-pane" aria-selected="true">Python</button>
+                            <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">Python</button>
                         </li>
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="marketing-tab" data-bs-toggle="tab"
-                                data-bs-target="#marketing-tab-pane" type="button" role="tab"
-                                aria-controls="marketing-tab-pane" aria-selected="false">Java</button>
+                            <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">Java</button>
                         </li>
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="finance-tab" data-bs-toggle="tab"
-                                data-bs-target="#finance-tab-pane" type="button" role="tab"
-                                aria-controls="finance-tab-pane" aria-selected="false">HTML & CSS</button>
+                            <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">HTML & CSS</button>
                         </li>
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="Javascript-tab" data-bs-toggle="tab"
-                                data-bs-target="#Javascript-tab-pane" type="button" role="tab" aria-controls="Javascript-tab-pane"
-                                aria-selected="false">Javascript</button>
+                            <button class="nav-link" id="Javascript-tab" data-bs-toggle="tab" data-bs-target="#Javascript-tab-pane" type="button" role="tab" aria-controls="Javascript-tab-pane" aria-selected="false">Javascript</button>
                         </li>
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="education-tab" data-bs-toggle="tab"
-                                data-bs-target="#education-tab-pane" type="button" role="tab"
-                                aria-controls="education-tab-pane" aria-selected="false">C++</button>
+                            <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">Education</button>
                         </li>
                     </ul>
                 </div>
@@ -187,8 +196,7 @@
 
                     <div class="col-12">
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel"
-                                aria-labelledby="design-tab" tabindex="0">
+                            <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel" aria-labelledby="design-tab" tabindex="0">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
@@ -202,8 +210,7 @@
                                                     </div>
                                                 </div>
 
-                                                <img src="https://media.licdn.com/dms/image/D4E12AQGhcB9sjME21A/article-cover_image-shrink_600_2000/0/1690470652748?e=2147483647&v=beta&t=36PiqgfnkCBa-WMbjocpdfbI-fRRg1jKvSlu6XuMSTo"
-                                                    class="custom-block-image img-fluid" alt="">
+                                                <img src="https://media.licdn.com/dms/image/D4E12AQGhcB9sjME21A/article-cover_image-shrink_600_2000/0/1690470652748?e=2147483647&v=beta&t=36PiqgfnkCBa-WMbjocpdfbI-fRRg1jKvSlu6XuMSTo" class="custom-block-image img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -219,8 +226,7 @@
                                                     </div>
                                                 </div>
 
-                                                <img src="https://store-images.s-microsoft.com/image/apps.51614.14043557400480129.785a8c27-f3e7-4873-a3fb-94a2c71337d6.3ec510c9-bd42-4693-a2d2-ab63cf055fee?mode=scale&q=90&h=1080&w=1920"
-                                                    class="custom-block-image img-fluid" alt="">
+                                                <img src="https://store-images.s-microsoft.com/image/apps.51614.14043557400480129.785a8c27-f3e7-4873-a3fb-94a2c71337d6.3ec510c9-bd42-4693-a2d2-ab63cf055fee?mode=scale&q=90&h=1080&w=1920" class="custom-block-image img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -236,16 +242,14 @@
                                                     </div>
                                                 </div>
 
-                                                <img src="https://media.istockphoto.com/id/1093579540/photo/playing-cards-fanned-out-suit-of-spades-clubs-and-diamonds-fanned-out-over-white-background.jpg?s=612x612&w=0&k=20&c=c-PgfLmFyOFDJLsaEyMgzxUkAc1hCtancvD2bU3DSlc="
-                                                    class="custom-block-image img-fluid" alt="">
+                                                <img src="https://media.istockphoto.com/id/1093579540/photo/playing-cards-fanned-out-suit-of-spades-clubs-and-diamonds-fanned-out-over-white-background.jpg?s=612x612&w=0&k=20&c=c-PgfLmFyOFDJLsaEyMgzxUkAc1hCtancvD2bU3DSlc=" class="custom-block-image img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel"
-                                aria-labelledby="marketing-tab" tabindex="0">
+                            <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
@@ -290,8 +294,7 @@
                                                     </div>
                                                 </div>
 
-                                                <img src="Snake_OG-logo (1).jpg" class="custom-block-image img-fluid"
-                                                    alt="">
+                                                <img src="Snake_OG-logo (1).jpg" class="custom-block-image img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -310,12 +313,11 @@
                                                         <p class="mb-0">A portfolio website using HTML & CSS</p>
                                                     </div>
                                                 </div>
-                                                <img src="https://cache.careers360.mobi/media/article_images/2022/4/20/How-to-make-portfolio-for-design-admission.webp"
-                                                    class="custom-block-image img-fluid" alt="">
+                                                <img src="https://cache.careers360.mobi/media/article_images/2022/4/20/How-to-make-portfolio-for-design-admission.webp" class="custom-block-image img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
-                            
+
                                     <!-- Second Tab Content -->
                                     <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
@@ -326,24 +328,22 @@
                                                         <p class="mb-0">A Hamburger menu system using HTML & CSS</p>
                                                     </div>
                                                 </div>
-                                                <img src="images/hamburgerheader-810x810.jpg" height="100" length="50"
-                                                    class="custom-block-image img-fluid" alt="">
+                                                <img src="images/hamburgerheader-810x810.jpg" height="100" length="50" class="custom-block-image img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
 
-                            <div class="tab-pane fade" id="Javascript-tab-pane" role="tabpanel" aria-labelledby="Javascript-tab"
-                                tabindex="0">
+
+                            <div class="tab-pane fade" id="Javascript-tab-pane" role="tabpanel" aria-labelledby="Javascript-tab" tabindex="0">
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
                                             <a href="topics-detail copy 8.html">
                                                 <div class="d-flex">
                                                     <div>
-                                                        <h5 class="mb-2">Mouse over Element</h5>
+                                                        <h5 class="mb-2">Mouseover Element</h5>
 
                                                         <p class="mb-0">A mouse over element game using Javascript.
                                                         </p>
@@ -352,8 +352,7 @@
                                                     <span class="badge bg-Javascript rounded-pill ms-auto">45</span>
                                                 </div>
 
-                                                <img src="image6.png.jpeg"
-                                                    class="custom-block-image img-fluid" alt="">
+                                                <img src="image6.png.jpeg" class="custom-block-image img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -365,59 +364,56 @@
                                                     <div>
                                                         <h5 class="mb-2">Javascript Clock</h5>
 
-                                                        <p class="mb-0">A simple clock created using Javascript.
+                                                        <p class="mb-0">A simple clck created using Javascript.
                                                         </p>
                                                     </div>
 
                                                     <span class="badge bg-Javascrit rounded-pill ms-auto">45</span>
                                                 </div>
 
-                                                <img src="clock.jpg"
-                                                    class="custom-block-image img-fluid" alt="">
+                                                <img src="clock.jpg" class="custom-block-image img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail copy 10.html"></a>
+                                            <a href="topics-detail copy 10.html">
                                                 <div class="d-flex">
                                                     <div>
-                                                        <h5 class="mb-2">8-Ball pool</h5>
+                                                        <h5 class="mb-2">Podcast</h5>
 
-                                                        <p class="mb-0">An 8-ball pool game made using Javascript.
+                                                        <p class="mb-0">Lorem Ipsum dolor sit amet consectetur
                                                         </p>
                                                     </div>
 
                                                     <span class="badge bg-Javascript rounded-pill ms-auto">20</span>
                                                 </div>
 
-                                                <img src="image1-2.jpg"
-                                                    class="custom-block-image img-fluid" alt="">
+                                                <img src="images/topics/undraw_Podcast_audience_re_4i5q.png" class="custom-block-image img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="tab-pane fade" id="education-tab-pane" role="tabpanel"
-                                aria-labelledby="education-tab" tabindex="0">
+                            <div class="tab-pane fade" id="education-tab-pane" role="tabpanel" aria-labelledby="education-tab" tabindex="0">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
                                             <a href="topics-detail copy 11.html">
                                                 <div class="d-flex">
                                                     <div>
-                                                        <h5 class="mb-2">Car rental system.</h5>
+                                                        <h5 class="mb-2">Graduation</h5>
 
-                                                        <p class="mb-0">A car rental system made using C++.
+                                                        <p class="mb-0">Lorem Ipsum dolor sit amet consectetur
                                                         </p>
                                                     </div>
 
+                                                    <span class="badge bg-education rounded-pill ms-auto">80</span>
                                                 </div>
 
-                                                <img src="rental-car-min.png"
-                                                    class="custom-block-image img-fluid" alt="">
+                                                <img src="images/topics/undraw_Graduation_re_gthn.png" class="custom-block-image img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -427,16 +423,16 @@
                                             <a href="topics-detail copy 12.html">
                                                 <div class="d-flex">
                                                     <div>
-                                                        <h5 class="mb-2">Library management system.</h5>
+                                                        <h5 class="mb-2">Educator</h5>
 
-                                                        <p class="mb-0">A library management system made using C++.
+                                                        <p class="mb-0">Lorem Ipsum dolor sit amet consectetur
                                                         </p>
                                                     </div>
 
+                                                    <span class="badge bg-education rounded-pill ms-auto">75</span>
                                                 </div>
 
-                                                <img src="library.jpg"
-                                                    class="custom-block-image img-fluid" alt="">
+                                                <img src="images/topics/undraw_Educator_re_ju47.png" class="custom-block-image img-fluid" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -504,8 +500,7 @@
                     <div class="col-12 text-center mt-5">
                         <p class="text-white">
                             Download VS-Code
-                            <a href="https://code.visualstudio.com/download"
-                                class="btn custom-btn custom-border-btn ms-3">VS-Code</a>
+                            <a href="https://code.visualstudio.com/download" class="btn custom-btn custom-border-btn ms-3">VS-Code</a>
                         </p>
                     </div>
                 </div>
@@ -531,14 +526,12 @@
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         What is STRIFF?
                                     </button>
                                 </h2>
 
-                                <div id="collapseOne" class="accordion-collapse collapse show"
-                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         STRIFF is a WEB platform consisting of codes from different programming and web
                                         designing languages with different functionalities.
@@ -548,14 +541,12 @@
 
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         How to find a topic?
                                     </button>
                                 </h2>
 
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         You can search on the search bar with <strong>keywords</strong> such as the name
                                         of the programming language to access a list of codes with different
@@ -565,15 +556,12 @@
 
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                            aria-expanded="false" aria-controls="collapseThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                             Does it need to be paid to be used?
                                         </button>
                                     </h2>
 
-                                    <div id="collapseThree" class="accordion-collapse collapse"
-                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             STRIFF is a free to use platform.
                                         </div>
