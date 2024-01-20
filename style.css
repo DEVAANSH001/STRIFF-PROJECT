@@ -81,6 +81,13 @@ footer{
   background-color: #80D0C7;
   color: #ffffff;
 }
+#no-results-message{
+  display: flex!important;
+  justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30pt;
+  padding-bottom: 50px;
+}
 @media screen and (max-width: 720px) {
   img {
     max-width: 100%;

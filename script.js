@@ -3,7 +3,7 @@ let products = {
     {
       productName: "Banking Management",
       category: "Python",
-      keywords: ["simple", "allows", "history", "balances", "project", "suitable", "transaction", "deposits", "banking", "view", "applications", "perform", "system", "intended", "purposes", "use", "educational", "check", "application", "withdrawals", "transactions", "accounts", "users", "create", "python"],
+      keywords: ["system", "users", "transactions", "create", "allows", "check", "deposits", "withdrawals", "application", "simple", "python", "perform", "use", "suitable", "intended", "history", "balances", "view", "purposes", "educational", "project", "accounts", "transaction", "applications", "banking"],
      // price: "30",
       image: "bank.jpg",
       htmlFile: "topics-detail.html",
@@ -11,50 +11,50 @@ let products = {
     {
       productName: "Sudoko",
       category: "Python",
-      keywords: ["Python", "Sudoko"],
+      keywords: ["row", "9", "without", "1", "sudoku", "regions", "known", "combinatorial", "subgrids", "nine", "9x9", "objective", "also", "3x3", "contain", "puzzle", "blocks", "column", "fill", "digits", "grid", "repetition"],
       //price: "49",
       image: "sudoko.jpg",
       htmlFile: "topics-detail copy.html",
     },
     {
       productName: "Playing Cards",
-      category: "Java",
-      keywords: ["Java", "Playing Cards"],
+      category: "Python",
+      keywords: ["simple", "compete", "shuffled", "players", "higher", "player", "wins", "drawing", "war", "cards", "deck", "card", "round", "game", "two", "known"],
       //price: "99",
       image: "playing-cards.jpg",
     },
     {
-      productName: "A",
-      category: "A",
-      keywords: ["A", "A"],
+      productName: "Minesweeper",
+      category: "Java",
+      keywords: ["classic", "minesweeper", "created", "using"],
       //price: "A",
       image: "playing-cards.jpg",
     },
     {
-      productName: "B",
-      category: "B",
-      keywords: ["B", "B"],
+      productName: "Calculator",
+      category: "Java",
+      keywords: ["java", "using", "creating", "basic", "calculator"],
       //price: "129",
       image: "playing-cards.jpg",
     },
     {
-      productName: "C",
-      category: "C",
-      keywords: ["C", "C"],
+      productName: "Snake game",
+      category: "Java",
+      keywords: ["fruit", "increase", "size", "randomly", "earned", "created", "classic", "board", "snake", "java", "points", "consuming", "time", "nostalgic", "game", "every", "fruits", "using", "consumed", "spawn"],
       //price: "89",
       image: "playing-cards.jpg",
     },
     {
-      productName: "Playing Cards",
+      productName: "Car rental system",
       category: "C++",
-      keywords: ["C++", "Playing Cards"],
+      keywords: ["creating", "rental", "system", "using", "car", "easy", "use"],
       //price: "189",
       image: "playing-cards.jpg",
     },
     {
-      productName: "Playing Cards",
+      productName: "Library management system",
       category: "C++",
-      keywords: ["C++", "Playing Cards"],
+      keywords: ['using', 'management', 'creating', 'system', 'library'],
       //price: "49",
       image: "playing-cards.jpg",
     },
@@ -231,14 +231,14 @@ document.getElementById("search-button").addEventListener("click", () => {
     let productData = products.data.find(product => product.productName.toUpperCase() === productName.toUpperCase());
     let keywords = productData ? productData.keywords.map(keyword => keyword.toLowerCase()) : [];
 
-    // Check if any term matches category or product name
+    // Check if any term matches category or product name partially
     let matchCategory = category.includes(searchInput);
     let matchProductName = productName.includes(searchInput);
 
-    // If there is no match in category or product name, check in keywords
+    // If there is no partial match in category or product name, check in keywords
     if (!matchCategory && !matchProductName) {
-      // Check if any term matches in keywords
-      matchCategory = searchTerms.some(term => keywords.includes(term));
+      // Check if any term partially matches in keywords
+      matchCategory = searchTerms.some(term => keywords.some(keyword => keyword.includes(term)));
     }
 
     // Show or hide the card based on the match
@@ -248,7 +248,21 @@ document.getElementById("search-button").addEventListener("click", () => {
       card.classList.add("hide");
     }
   });
+
+  // Clear previous search results
+  if (searchInput.trim() === "") {
+    cards.forEach(card => card.classList.remove("hide"));
+  }
+
+  // Display no results message
+  let noResultsMessage = document.getElementById("no-results-message");
+  if (cards.length > 0 && document.querySelectorAll(".card:not(.hide)").length === 0) {
+    noResultsMessage.style.display = "block";
+  } else {
+    noResultsMessage.style.display = "none";
+  }
 });
+
 
 
 
