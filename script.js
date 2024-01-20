@@ -3,6 +3,7 @@ let products = {
     {
       productName: "Banking Management",
       category: "Python",
+      keywords: ["simple", "allows", "history", "balances", "project", "suitable", "transaction", "deposits", "banking", "view", "applications", "perform", "system", "intended", "purposes", "use", "educational", "check", "application", "withdrawals", "transactions", "accounts", "users", "create", "python"],
      // price: "30",
       image: "bank.jpg",
       htmlFile: "topics-detail.html",
@@ -10,6 +11,7 @@ let products = {
     {
       productName: "Sudoko",
       category: "Python",
+      keywords: ["Python", "Sudoko"],
       //price: "49",
       image: "sudoko.jpg",
       htmlFile: "topics-detail copy.html",
@@ -17,36 +19,42 @@ let products = {
     {
       productName: "Playing Cards",
       category: "Java",
+      keywords: ["Java", "Playing Cards"],
       //price: "99",
       image: "playing-cards.jpg",
     },
     {
       productName: "A",
       category: "A",
+      keywords: ["A", "A"],
       //price: "A",
       image: "playing-cards.jpg",
     },
     {
       productName: "B",
       category: "B",
+      keywords: ["B", "B"],
       //price: "129",
       image: "playing-cards.jpg",
     },
     {
       productName: "C",
       category: "C",
+      keywords: ["C", "C"],
       //price: "89",
       image: "playing-cards.jpg",
     },
     {
       productName: "Playing Cards",
       category: "C++",
+      keywords: ["C++", "Playing Cards"],
       //price: "189",
       image: "playing-cards.jpg",
     },
     {
       productName: "Playing Cards",
       category: "C++",
+      keywords: ["C++", "Playing Cards"],
       //price: "49",
       image: "playing-cards.jpg",
     },
@@ -216,41 +224,34 @@ document.getElementById("search-button").addEventListener("click", () => {
   let searchTerms = searchInput.split(/\s+/); // Split the search input into an array of terms
   let cards = document.querySelectorAll(".card");
 
-  // Flags to check if any result is found
-  let foundResult = false;
-  let foundCategory = false;
-
   // Loop through all cards
   cards.forEach((card) => {
     let productName = card.querySelector(".product-name").innerText.toLowerCase();
     let category = card.classList[1].toLowerCase();
+    let productData = products.data.find(product => product.productName.toUpperCase() === productName.toUpperCase());
+    let keywords = productData ? productData.keywords.map(keyword => keyword.toLowerCase()) : [];
 
-    // Check if any term matches either product name or category
-    let match = searchTerms.some(term => productName.includes(term) || category.includes(term));
+    // Check if any term matches category or product name
+    let matchCategory = category.includes(searchInput);
+    let matchProductName = productName.includes(searchInput);
 
-    if (match) {
-      // Display matching card
+    // If there is no match in category or product name, check in keywords
+    if (!matchCategory && !matchProductName) {
+      // Check if any term matches in keywords
+      matchCategory = searchTerms.some(term => keywords.includes(term));
+    }
+
+    // Show or hide the card based on the match
+    if (matchCategory || matchProductName) {
       card.classList.remove("hide");
-      foundResult = true;
-
-      // Check if the specified category is present
-      if (category === searchInput) {
-        foundCategory = true;
-      }
     } else {
-      // Hide others
       card.classList.add("hide");
     }
   });
-
-  // Check if any projects with the specified category are found
-  if (!foundResult && !foundCategory) {
-    alert(`Sorry, no results for '${searchInput}'. Showing other projects.`);
-    // You can also update the UI or perform additional actions based on your requirements
-    // For example, display all projects based on the entered programming language
-    filterProduct(searchInput);
-  }
 });
+
+
+
 
 
 
