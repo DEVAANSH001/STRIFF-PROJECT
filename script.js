@@ -156,6 +156,7 @@ document.getElementById("search-button").addEventListener("click", () => {
   });
 });*/ 
 
+/*
 document.getElementById("search-button").addEventListener("click", () => {
   // Initializations
   let searchInput = document.getElementById("keyword").value.toLowerCase();
@@ -182,7 +183,75 @@ document.getElementById("search-button").addEventListener("click", () => {
       }
     }
   });
+});*/
+
+/*
+document.getElementById("search-button").addEventListener("click", () => {
+  // Initializations
+  let searchInput = document.getElementById("keyword").value.toLowerCase();
+  let searchTerms = searchInput.split(/\s+/); // Split the search input into an array of terms
+  let cards = document.querySelectorAll(".card");
+
+  // Loop through all cards
+  cards.forEach((card) => {
+    let productName = card.querySelector(".product-name").innerText.toLowerCase();
+    let category = card.classList[1].toLowerCase();
+
+    // Check if any term matches either product name or category
+    let match = searchTerms.some(term => productName.includes(term) || category.includes(term));
+
+    if (match) {
+      // Display matching card
+      card.classList.remove("hide");
+    } else {
+      // Hide others
+      card.classList.add("hide");
+    }
+  });
+});*/
+
+document.getElementById("search-button").addEventListener("click", () => {
+  // Initializations
+  let searchInput = document.getElementById("keyword").value.toLowerCase();
+  let searchTerms = searchInput.split(/\s+/); // Split the search input into an array of terms
+  let cards = document.querySelectorAll(".card");
+
+  // Flag to check if any result is found
+  let foundResult = false;
+
+  // Loop through all cards
+  cards.forEach((card) => {
+    let productName = card.querySelector(".product-name").innerText.toLowerCase();
+    let category = card.classList[1].toLowerCase();
+
+    // Check if any term matches either product name or category
+    let match = searchTerms.some(term => productName.includes(term) || category.includes(term));
+
+    if (match) {
+      // Display matching card
+      card.classList.remove("hide");
+      foundResult = true;
+    } else {
+      // Hide others
+      card.classList.add("hide");
+    }
+  });
+
+  // If no results were found, show a message
+  if (!foundResult) {
+    alert(`Sorry, no results for '${searchInput}'. Showing other projects.`);
+    // You can also update the UI or perform additional actions based on your requirements
+    // For example, display all projects in Java
+    filterProduct("Java");
+  }
 });
+
+
+
+
+
+
+
 
 
 
