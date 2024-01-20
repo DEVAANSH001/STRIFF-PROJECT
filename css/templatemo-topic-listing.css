@@ -508,7 +508,6 @@ div {
 }
 
 .hero-section .input-group {
-  background-color: var(--white-color);
   border-radius: var(--border-radius-large);
   padding: 10px 15px;
 }
@@ -531,6 +530,11 @@ div {
   border-radius: var(--border-radius-large) !important;
   color: var(--white-color);
   max-width: 150px;
+}
+
+.form-control{
+  margin-left: 227px;
+  font-size: xx-large!important;
 }
 
 
