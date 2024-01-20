@@ -199,7 +199,7 @@ document.getElementById("search-button").addEventListener("click", () => {
   });
 });*/
 
-/*
+
 document.getElementById("search-button").addEventListener("click", () => {
   // Initializations
   let searchInput = document.getElementById("keyword").value.toLowerCase();
@@ -222,52 +222,52 @@ document.getElementById("search-button").addEventListener("click", () => {
       card.classList.add("hide");
     }
   });
-});*/
+});
 
-document.getElementById("search-button").addEventListener("click", () => {
-  // Initializations
-  let searchInput = document.getElementById("keyword").value.toLowerCase();
-  let searchTerms = searchInput.split(/\s+/); // Split the search input into an array of terms
-  let cards = document.querySelectorAll(".card");
+// document.getElementById("search-button").addEventListener("click", () => {
+//   // Initializations
+//   let searchInput = document.getElementById("keyword").value.toLowerCase();
+//   let searchTerms = searchInput.split(/\s+/); // Split the search input into an array of terms
+//   let cards = document.querySelectorAll(".card");
 
   // Loop through all cards
-  cards.forEach((card) => {
-    let productName = card.querySelector(".product-name").innerText.toLowerCase();
-    let category = card.classList[1].toLowerCase();
-    let productData = products.data.find(product => product.productName.toUpperCase() === productName.toUpperCase());
-    let keywords = productData ? productData.keywords.map(keyword => keyword.toLowerCase()) : [];
+//   cards.forEach((card) => {
+//     let productName = card.querySelector(".product-name").innerText.toLowerCase();
+//     let category = card.classList[1].toLowerCase();
+//     let productData = products.data.find(product => product.productName.toUpperCase() === productName.toUpperCase());
+//     let keywords = productData ? productData.keywords.map(keyword => keyword.toLowerCase()) : [];
 
-    // Check if any term matches category or product name partially
-    let matchCategory = category.includes(searchInput);
-    let matchProductName = productName.includes(searchInput);
+//     // Check if any term matches category or product name partially
+//     let matchCategory = category.includes(searchInput);
+//     let matchProductName = productName.includes(searchInput);
 
-    // If there is no partial match in category or product name, check in keywords
-    if (!matchCategory && !matchProductName) {
-      // Check if any term partially matches in keywords
-      matchCategory = searchTerms.some(term => keywords.some(keyword => keyword.includes(term)));
-    }
+//     // If there is no partial match in category or product name, check in keywords
+//     if (!matchCategory && !matchProductName) {
+//       // Check if any term partially matches in keywords
+//       matchCategory = searchTerms.some(term => keywords.some(keyword => keyword.includes(term)));
+//     }
 
-    // Show or hide the card based on the match
-    if (matchCategory || matchProductName) {
-      card.classList.remove("hide");
-    } else {
-      card.classList.add("hide");
-    }
-  });
+//     // Show or hide the card based on the match
+//     if (matchCategory || matchProductName) {
+//       card.classList.remove("hide");
+//     } else {
+//       card.classList.add("hide");
+//     }
+//   });
 
-  // Clear previous search results
-  if (searchInput.trim() === "") {
-    cards.forEach(card => card.classList.remove("hide"));
-  }
+//   // Clear previous search results
+//   if (searchInput.trim() === "") {
+//     cards.forEach(card => card.classList.remove("hide"));
+//   }
 
-  // Display no results message
-  let noResultsMessage = document.getElementById("no-results-message");
-  if (cards.length > 0 && document.querySelectorAll(".card:not(.hide)").length === 0) {
-    noResultsMessage.style.display = "block";
-  } else {
-    noResultsMessage.style.display = "none";
-  }
-});
+//   // Display no results message
+//   let noResultsMessage = document.getElementById("no-results-message");
+//   if (cards.length > 0 && document.querySelectorAll(".card:not(.hide)").length === 0) {
+//     noResultsMessage.style.display = "block";
+//   } else {
+//     noResultsMessage.style.display = "none";
+//   }
+// });
 
 
 

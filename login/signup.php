@@ -69,7 +69,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      <form action="/STRIFF-PROJECT/login/signup.php" method="post">
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+            <input autocomplete="off" type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
             
         </div>
         <div class="form-group">
