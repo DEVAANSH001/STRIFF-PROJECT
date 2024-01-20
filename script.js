@@ -95,8 +95,7 @@ function filterProduct(value) {
   });
 
   //select all cards
-  let elements = document.querySelectorAll(".card");
-  //loop through all cards
+  let elements = document.querySelectorAll(".card"); //loop through all cards
   elements.forEach((element) => {
     //display all cards on 'all' button click
     if (value == "All") {
@@ -115,7 +114,7 @@ function filterProduct(value) {
 }
 
 //Search button click
-document.getElementById("search-button").addEventListener("click", () => {
+/*document.getElementById("search-button").addEventListener("click", () => {
   //initializations
   let searchInput = document.getElementById("keyword").value;
   let elements = document.querySelectorAll(".product-name");
@@ -132,7 +131,61 @@ document.getElementById("search-button").addEventListener("click", () => {
       cards[index].classList.add("hide");
     }
   });
+});*/
+
+/*
+document.getElementById("search-button").addEventListener("click", () => {
+  // Initializations
+  let searchInput = document.getElementById("keyword").value.toLowerCase();
+  let elements = document.querySelectorAll(".product-name");
+  let cards = document.querySelectorAll(".card");
+
+  // Loop through all elements
+  elements.forEach((element, index) => {
+    // Check if text includes the search value
+    if (
+      element.innerText.toLowerCase().includes(searchInput) ||
+      (elements.classList.contains(searchInput))
+    ) {
+      // Display matching card
+      cards[index].classList.remove("hide");
+    } else {
+      // Hide others
+      cards[index].classList.add("hide");
+    }
+  });
+});*/ 
+
+document.getElementById("search-button").addEventListener("click", () => {
+  // Initializations
+  let searchInput = document.getElementById("keyword").value.toLowerCase();
+  let elements = document.querySelectorAll(".product-name");
+  let cards = document.querySelectorAll(".card");
+
+  // Loop through all elements
+  elements.forEach((element, index) => {
+    // Check if text includes the search value or if the second class includes the search value
+    if (
+      element.innerText.toLowerCase().includes(searchInput) ||
+      element.classList.length > 1 && element.classList[1].toLowerCase().includes(searchInput)
+    ) {
+      // Display matching card
+      cards[index].classList.remove("hide");
+    } else {
+      // Check if the category includes the search value
+      let category = element.closest('.card').classList[1].toLowerCase();
+      if (category.includes(searchInput)) {
+        cards[index].classList.remove("hide");
+      } else {
+        // Hide others
+        cards[index].classList.add("hide");
+      }
+    }
+  });
 });
+
+
+
 
 //Initially display all products
 window.onload = () => {
