@@ -216,8 +216,9 @@ document.getElementById("search-button").addEventListener("click", () => {
   let searchTerms = searchInput.split(/\s+/); // Split the search input into an array of terms
   let cards = document.querySelectorAll(".card");
 
-  // Flag to check if any result is found
+  // Flags to check if any result is found
   let foundResult = false;
+  let foundCategory = false;
 
   // Loop through all cards
   cards.forEach((card) => {
@@ -231,20 +232,26 @@ document.getElementById("search-button").addEventListener("click", () => {
       // Display matching card
       card.classList.remove("hide");
       foundResult = true;
+
+      // Check if the specified category is present
+      if (category === searchInput) {
+        foundCategory = true;
+      }
     } else {
       // Hide others
       card.classList.add("hide");
     }
   });
 
-  // If no results were found, show a message
-  if (!foundResult) {
+  // Check if any projects with the specified category are found
+  if (!foundResult && !foundCategory) {
     alert(`Sorry, no results for '${searchInput}'. Showing other projects.`);
     // You can also update the UI or perform additional actions based on your requirements
-    // For example, display all projects in Java
-    filterProduct("Java");
+    // For example, display all projects based on the entered programming language
+    filterProduct(searchInput);
   }
 });
+
 
 
 
