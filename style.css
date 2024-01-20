@@ -62,7 +62,9 @@ footer{
 }
 .input-group{
   justify-content: space-evenly;
-
+}
+.custom-form .form-control{
+  height: 50px;
 }
 #buttons{
   display: flex;
