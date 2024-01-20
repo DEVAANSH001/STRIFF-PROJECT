@@ -672,6 +672,10 @@ div {
   border-radius: var(--border-radius-medium);
 }
 
+#banking-system-image{
+  height: 275px!important;
+}
+
 blockquote {
   background-color: var(--section-bg-color);
   border-radius: var(--border-radius-small);
