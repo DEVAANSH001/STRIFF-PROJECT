@@ -90,7 +90,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                     <div class="col-lg-8 col-12 mx-auto">
                         <h1 class="text-white text-center">Discover. Learn. Revise</h1>
 
-                        <h6 class="text-center">platform to explore projects </h6>
+                        <h6 class="text-center">Platform to Explore Projects </h6>
 
                         <form method="get" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" role="search" action="index2.html">
                             <div class="input-group input-group-lg">
@@ -99,54 +99,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                                 </a>
                             </div>
                         </form>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-        <section class="featured-section">
-            <div class="container">
-                <div class="row justify-content-center">
-
-                    <div class="col-lg-4 col-12 mb-4 mb-lg-0">
-                        <div class="custom-block bg-white shadow-lg">
-                            <a href="topics-detail.html">
-                                <div class="d-flex">
-                                    <div>
-                                        <h5 class="mb-2">Web Design</h5>
-
-                                        <p class="mb-0">Web design is the art and science of creating visually
-                                            appealing, user-friendly websites.</p>
-                                    </div>
-                                </div>
-
-                                <img src="images/topics/undraw_Remote_design_team_re_urdx.png" class="custom-block-image img-fluid" alt="">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-12">
-                        <div class="custom-block custom-block-overlay">
-                            <div class="d-flex flex-column h-100">
-                                <img src="images/woman.jpg" class="custom-block-image img-fluid" alt="">
-
-                                <div class="custom-block-overlay-text d-flex">
-                                    <div>
-                                        <h5 class="text-white mb-2">Finance</h5>
-
-                                        <p class="text-white">Topic Listing Template includes homepage, listing page,
-                                            detail page, and contact page. You can feel free to edit and adapt for your
-                                            CMS requirements.</p>
-
-                                        <a href="topics-detail.html" class="btn custom-btn mt-2 mt-lg-3">Learn More</a>
-                                    </div>
-                                </div>
-
-                                <div class="section-overlay"></div>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
@@ -185,7 +137,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                         </li>
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">Education</button>
+                            <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">C++</button>
                         </li>
                     </ul>
                 </div>
@@ -200,7 +152,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail.html">
+                                            <a href="banking_management_system.html">
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2">Banking System</h5>
@@ -217,7 +169,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail copy.html">
+                                            <a href="sudoku_solver.html">
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2">Sudoku Solver</h5>
@@ -233,7 +185,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
                                     <div class="col-lg-4 col-md-6 col-12">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail copy 2.html">
+                                            <a href="card_game.html">
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2">Card Game</h5>
@@ -253,7 +205,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail copy 3.html">
+                                            <a href="minesweeper.html">
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2">Minesweeper</h5>
@@ -269,7 +221,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail copy 4.html">
+                                            <a href="calculator.html">
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2">Calculator</h5>
@@ -285,7 +237,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail copy 5.html">
+                                            <a href="snake_game.html">
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2">Snake game</h5>
@@ -306,7 +258,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                                     <!-- First Tab Content -->
                                     <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail copy 6.html">
+                                            <a href="portfolio_website.html">
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2">Portfolio Website</h5>
@@ -321,7 +273,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                                     <!-- Second Tab Content -->
                                     <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail copy 7.html">
+                                            <a href="hamburger_dropdown_menu_system.html">
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2">Hamburger menu system</h5>
@@ -340,7 +292,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail copy 8.html">
+                                            <a href="mouse_over_element_game.html">
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2">Mouseover Element</h5>
@@ -359,16 +311,14 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail copy 9.html">
+                                            <a href="creating_a_clock.html">
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2">Javascript Clock</h5>
 
-                                                        <p class="mb-0">A simple clck created using Javascript.
+                                                        <p class="mb-0">A simple clock created using Javascript.
                                                         </p>
                                                     </div>
-
-                                                    <span class="badge bg-Javascrit rounded-pill ms-auto">45</span>
                                                 </div>
 
                                                 <img src="clock.jpg" class="custom-block-image img-fluid" alt="">
@@ -378,16 +328,14 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail copy 10.html">
+                                            <a href="8_ball_pool.html">
                                                 <div class="d-flex">
                                                     <div>
-                                                        <h5 class="mb-2">Podcast</h5>
+                                                        <h5 class="mb-2">8 Ball Pool</h5>
 
-                                                        <p class="mb-0">Lorem Ipsum dolor sit amet consectetur
+                                                        <p class="mb-0">8 Ball Pool Game
                                                         </p>
                                                     </div>
-
-                                                    <span class="badge bg-Javascript rounded-pill ms-auto">20</span>
                                                 </div>
 
                                                 <img src="images/topics/undraw_Podcast_audience_re_4i5q.png" class="custom-block-image img-fluid" alt="">
@@ -401,16 +349,14 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail copy 11.html">
+                                            <a href="library_management_system.html">
                                                 <div class="d-flex">
                                                     <div>
-                                                        <h5 class="mb-2">Graduation</h5>
+                                                        <h5 class="mb-2">Library Management System</h5>
 
-                                                        <p class="mb-0">Lorem Ipsum dolor sit amet consectetur
+                                                        <p class="mb-0">A library management system using C++
                                                         </p>
                                                     </div>
-
-                                                    <span class="badge bg-education rounded-pill ms-auto">80</span>
                                                 </div>
 
                                                 <img src="images/topics/undraw_Graduation_re_gthn.png" class="custom-block-image img-fluid" alt="">
@@ -420,16 +366,14 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
                                     <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail copy 12.html">
+                                            <a href="car_rental_system.html">
                                                 <div class="d-flex">
                                                     <div>
-                                                        <h5 class="mb-2">Educator</h5>
+                                                        <h5 class="mb-2">Car Rental System</h5>
 
-                                                        <p class="mb-0">Lorem Ipsum dolor sit amet consectetur
+                                                        <p class="mb-0">A car rental system made using C++
                                                         </p>
                                                     </div>
-
-                                                    <span class="badge bg-education rounded-pill ms-auto">75</span>
                                                 </div>
 
                                                 <img src="images/topics/undraw_Educator_re_ju47.png" class="custom-block-image img-fluid" alt="">
