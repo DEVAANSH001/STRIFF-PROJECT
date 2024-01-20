@@ -6,7 +6,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 }
 echo '<nav class="navbar navbar-expand-lg">
 <div class="container">
-    <a class="navbar-brand" href="/STRIFF-PROJECT/login/login.php">
+    <a class="navbar-brand" href="#">
         <i class="bi-back"></i>
         <span>STRIFF</span>
     </a>

@@ -90,7 +90,7 @@
     </div>
 
     <div class="form-group">
-        <label for="desc">Description</label>
+        <label for="desc">Describe your concern</label>
         <textarea class="form-control" name="desc" id="desc" cols="30" rows="10"></textarea> 
     </div>
     
