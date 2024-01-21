@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     ?>
 
     <div class="container my-4">
-     <h1 class="text-center">Signup to our website</h1>
+     <h1 class="text-center">Signup to STRIFF</h1>
      <form action="/STRIFF-PROJECT/login/signup.php" method="post">
         <div class="form-group">
             <label for="username">Username</label>

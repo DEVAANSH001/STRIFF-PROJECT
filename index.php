@@ -539,38 +539,13 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
                     <ul class="site-footer-links">
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Home</a>
-                        </li>
-
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">How it works</a>
-                        </li>
-
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">FAQs</a>
+                            <a href="/STRIFF-PROJECT/index.php" class="site-footer-link">Home</a>
                         </li>
 
                         <li class="site-footer-link-item">
                             <a href="/STRIFF-PROJECT/form.php" class="site-footer-link">Contact</a>
                         </li>
                     </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
-                    <h6 class="site-footer-title mb-3">Information</h6>
-
-                    <p class="text-white d-flex mb-1">
-                        <a class="site-footer-link">
-                            Bennett University
-                        </a>
-                    </p>
-
-                    <p class="text-white d-flex">
-                        <a class="site-footer-link">
-                            Name
-                        </a>
-                    </p>
-
                 </div>
             </div>
     </footer>
